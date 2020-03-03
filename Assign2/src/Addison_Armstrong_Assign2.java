@@ -343,6 +343,7 @@ public class Addison_Armstrong_Assign2 {
                     System.out.println("Invalid value.  Please enter your caesar cipher index:");
                     cipherIndex = readIn.next();
                     validCipher = false;
+
                 }
             }
         } while(!validCipher);
