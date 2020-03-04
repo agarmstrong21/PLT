@@ -343,7 +343,6 @@ public class Addison_Armstrong_Assign2 {
                     System.out.println("Invalid value.  Please enter your caesar cipher index:");
                     cipherIndex = readIn.next();
                     validCipher = false;
-
                 }
             }
         } while(!validCipher);
@@ -379,6 +378,7 @@ public class Addison_Armstrong_Assign2 {
 //            shiftIndexInt = -(shiftIndexInt % input.length());
 //        }else{
             shiftIndexInt = shiftIndexInt % input.length();
+        System.out.println(shiftIndexInt);
         //}
 
         for(int index = 0; index < input.length(); index++){
@@ -424,10 +424,10 @@ public class Addison_Armstrong_Assign2 {
 
         String encryptedPassword = "fjgnnqyqtn"; // seriously, never store passwords as plaintext, always encrypt it
         //System.out.println("\n\nProblem 3: " + Boolean.toString(problem3(encryptedPassword)) + "\n");
-        System.out.println("\n\nProblem 3a: " + Boolean.toString(problem3("ppsasvphli")) + "\n");
-        System.out.println("\n\nProblem 3b: " + Boolean.toString(problem3("szzcKcfzrV")) + "\n");
+        //System.out.println("\n\nProblem 3a: " + Boolean.toString(problem3("ppsasvphli")) + "\n");
+        //System.out.println("\n\nProblem 3b: " + Boolean.toString(problem3("szzcKcfzrV")) + "\n");
         System.out.println("\n\nProblem 3c: " + Boolean.toString(problem3("dwnzopqzu")) + "\n");
-        //System.out.println("\n\nProblem 3d: " + Boolean.toString(problem3("ardstudyh")) + "\n");
+        System.out.println("\n\nProblem 3d: " + Boolean.toString(problem3("ardstudyh")) + "\n");
         //System.out.println("\n\nProblem 3e: " + Boolean.toString(problem3("rstcxgzqc")) + "\n");
         //System.out.println("\n\nProblem 3f: " + Boolean.toString(problem3("java")) + "\n");
      /* password       cipherText   index   shift
