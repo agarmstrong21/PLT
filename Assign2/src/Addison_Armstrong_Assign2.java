@@ -24,7 +24,18 @@
  *
  * FAILURE TO FOLLOW ANY OF THE ABOVE INSTRUCTIONS WILL RESULT IN A ZERO.
  */
+/*
 
+Name of Project: Assign2
+Name of Class: Addison_Armstrong_Assign2
+Author: Addison Armstrong
+Date Created: 2/29/2020
+Last Update: 3/4/2020
+Class Description: This class contains 4 methods, main, problem1, problem2, and problem3. These problems contains
+	unique prompts that students must solve only using things that we have learned in class. All methods are called
+	within the main method.
+
+ */
 
 // don't add to or remove from these
 import java.util.*;
@@ -61,16 +72,33 @@ public class Addison_Armstrong_Assign2 {
      */
     public static int problem1(int bound1, int bound2, int bound3)
     {
+        /*
+        First if statement checks if all passed in bounds are equal, if so, will return bound1.
+
+        Second first is dependent if the first if statement is true or false, if the first if statement is false, the
+            second if statement will check to make sure that bound1 is less than or equal to bound2 AND bound2 is
+            less than or equal to bound3.
+         */
         if((bound1 == bound2) && (bound1 == bound3)){
             return bound1;
         }else if( (bound1 <= bound2) && (bound2 <= bound3)){
+            // Creating random variable to only use in this scope. To save memory, no need to create rand until it needs
+            //      needs to be used
             Random rand = new Random();
-            int myInt = 0;
-            while(myInt < 1 || myInt > bound3 || (myInt < bound2 && myInt > bound1)){
+
+            // myInt will be used as the returned random integer
+            int myInt = -1;
+
+            // this while statement checks to see if myInt is outside of both bound areas.
+            //      If so, we create a new random int
+            while(myInt < 0 || myInt > bound3 || (myInt < bound2 && myInt > bound1)){
                 myInt = rand.nextInt(bound3);
             }
+
+            // if myInt is within the bounds, return myInt
             return myInt;
         }
+        // if the bounds are incorrect or invalid, return 0.
         return 0;
     }
 
@@ -118,16 +146,34 @@ public class Addison_Armstrong_Assign2 {
      */
     public static double problem2(int bound1, int bound2, int bound3)
     {
+        /*
+        First if statement checks if all passed in bounds are equal, if so, will return bound1.
+
+        Second first is dependent if the first if statement is true or false, if the first if statement is false, the
+            second if statement will check to make sure that bound1 is less than or equal to bound2 AND bound2 is
+            less than or equal to bound3.
+         */
         if((bound1 == bound2) && (bound1 == bound3)){
             return bound1;
         }else if( (bound1 <= bound2) && (bound2 <= bound3)){
+            // Creating random variable to only use in this scope. To save memory, no need to create rand until it needs
+            //      needs to be used
             Random rand = new Random();
-            double myDoub = 0;
-            while(myDoub < 1 || myDoub > bound3 || (myDoub < bound2 && myDoub > bound1)){
+
+            // myDoub will be used as the returned random double between 0 and 1
+            double myDoub = -1;
+
+            // this while statement checks to see if myDoub is outside of both bound areas.
+            //      If so, we create a new random double
+            while(myDoub < 0 || myDoub > bound3 || (myDoub < bound2 && myDoub > bound1)){
+                // we times the random nextDouble with bound3 to create a range between 0-bound3
                 myDoub = rand.nextDouble() * (bound3);
             }
+
+            // once the while loop exits, returns myDoub
             return myDoub;
         }
+        // if the bounds are incorrect or invalid, return 0.
         return 0;
     }
 
@@ -300,45 +346,78 @@ public class Addison_Armstrong_Assign2 {
      */
     public static boolean problem3(String encryptedPassword)
     {
+        // Creates new Scanner object, readIn
         Scanner readIn = new Scanner(System.in);
+
+        // Defines booleans validPassword, validCipher, and validShift. These are used later to make sure inputs from
+        //      user are valid.
         boolean validPassword, validCipher, validShift;
+
+        // Defines and initializes String objects with and empty String. With the exception of alphabet, which is
+        //      initialized with the alphabet.
+        // input, cipherIndex, and shiftIndex are all inputs Strings from the user. temp is a temporary String used to
+        //      create the output String.
         String input = "", cipherIndex = "", shiftIndex = "", temp = "", alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+        // Defines and initializes integers cipherIndexInt, shiftIndexInt, and tempIndex with 0.
         int cipherIndexInt = 0, shiftIndexInt = 0, tempIndex = 0;
 
+        // Starting prompt to Scan in the user input, then transferring a lowercase version of the copy to input.
         System.out.println("Please enter a letter-based password:");
-        input = readIn.next();
-        input = input.toLowerCase();
+        input = readIn.next().toLowerCase();
+
+        // do while loop to check if the input is all letters. No numbers or special characters are allowed.
+        //      If the input does contain the numbers or special characters, then end the check, and ask for
+        //      another input
         do{
+            // initializing validPassword to true.
             validPassword = true;
+
+            // Checking input to see if it does contain numbers or special characters.
             for(int index = 0; index < input.length(); index++){
+                // If number or special character is found, change validPassword to false, then break the for loop by
+                //      making the conditional false.
                 if(!Character.isLetter(input.charAt(index))){
                     validPassword = false;
                     index = input.length();
                 }
             }
+
+            // If validPassword is false OR if the input is of length 0, then ask for another password.
             if(!validPassword || input.length() == 0){
                 System.out.println("Invalid password.  Please enter your password:");
                 input = readIn.next();
             }
         } while(!validPassword);
 
-
+        // Prompt for caesar cipher index. Takes in the caesar cipher as a string to avoid errors.
         System.out.println("Please enter your caesar cipher index:");
         cipherIndex = readIn.next();
+
+        // do while loop to check the input and see if its correct.
         do {
+            // Setting validCipher to true to assume the input is correct
             validCipher = true;
+
+            // for loop that runs from 0 to cipherIndex.length() to check each char to see if it is a digit or not
             for(int index = 0; index < cipherIndex.length(); index++){
+
+                // If not a digit, then change validCipher to false and end the for loop
                 if(!Character.isDigit(cipherIndex.charAt(index))){
                     validCipher = false;
                     index = cipherIndex.length();
                 }
             }
 
+            // if validCipher is false, then ask user for new input
             if(!validCipher){
                 System.out.println("Invalid value.  Please enter your caesar cipher index:");
                 cipherIndex = readIn.next();
             }else{
+                // if validCipher is true, parse the string to int, store a copy into cipherIndexInt
                 cipherIndexInt = Integer.parseInt(cipherIndex);
+
+                // check value to make sure it is between the bounds of the alphabet [0-25]. If not, ask user for new input
                 if(cipherIndexInt < 0 || cipherIndexInt > 25){
                     System.out.println("Invalid value.  Please enter your caesar cipher index:");
                     cipherIndex = readIn.next();
@@ -347,39 +426,56 @@ public class Addison_Armstrong_Assign2 {
             }
         } while(!validCipher);
 
+        // Prompts user to enter in a shift index as a string
         System.out.println("Please enter your shift:");
         shiftIndex = readIn.next();
+
+        // do while to check the shiftIndex to make sure it is a valid number.
         do{
+            // Setting validShift to true assuming that shiftIndex is valid
             validShift = true;
+
+            // for loop from 0 to shiftIndex.length() to check if the string contains letters
             for(int index = 0; index < shiftIndex.length(); index++){
+
+                // checks if the shiftIndex.atChar(index) char is a NOT a digit AND does not contain '-'
                 if(!Character.isDigit(shiftIndex.charAt(index)) && shiftIndex.charAt(index) != '-'){
+                    // if so, set validShift to false, then exit the for loop
                     validShift = false;
                     index = shiftIndex.length();
                 }
             }
 
+            // if validShift is false, then ask user for new shiftIndex
             if(!validShift){
                 System.out.println("Invalid value.  Please enter your shift index:");
                 shiftIndex = readIn.next();
             }else{
+                //else parses the shiftIndex string to int and stores it into shiftIndexInt
                 shiftIndexInt = Integer.parseInt(shiftIndex);
             }
         }while(!validShift);
 
+
+
+        // for loop to grab the numeric value of all chars in the input. Then will -10 from that numeric value because
+        //      Character.getNumericValue() start 'a' at 10 and 'z' at 36. Once that number is found, then find that
+        //      numeric value index inside of alphabet. Will return to a temp string adding onto the current temp String
         for(int index = 0; index < input.length(); index++){
             tempIndex = Character.getNumericValue(input.charAt(index)) - 10;
             temp += alphabet.charAt((tempIndex + cipherIndexInt) % 26);
         }
 
+        // Stores temp into input and sets temp to be empty
         input = temp;
         temp = "";
         System.out.println(input);
-//        if(Math.abs(shiftIndexInt) > input.length() && shiftIndexInt < 0){
-//            shiftIndexInt = -(shiftIndexInt % input.length());
-//        }else{
+        if(Math.abs(shiftIndexInt) > input.length() && shiftIndexInt < 0){
+            shiftIndexInt = -(shiftIndexInt % input.length());
+        }else{
             shiftIndexInt = shiftIndexInt % input.length();
         System.out.println(shiftIndexInt);
-        //}
+        }
 
         for(int index = 0; index < input.length(); index++){
             temp += input.charAt((input.length() + index - shiftIndexInt) % input.length());
@@ -423,13 +519,13 @@ public class Addison_Armstrong_Assign2 {
         System.out.println("Problem 2a: " + problem2(10, 10, 10) + "\n"); // 10*/
 
         String encryptedPassword = "fjgnnqyqtn"; // seriously, never store passwords as plaintext, always encrypt it
-        //System.out.println("\n\nProblem 3: " + Boolean.toString(problem3(encryptedPassword)) + "\n");
-        //System.out.println("\n\nProblem 3a: " + Boolean.toString(problem3("ppsasvphli")) + "\n");
-        //System.out.println("\n\nProblem 3b: " + Boolean.toString(problem3("szzcKcfzrV")) + "\n");
+        System.out.println("\n\nProblem 3: " + Boolean.toString(problem3(encryptedPassword)) + "\n");
+        System.out.println("\n\nProblem 3a: " + Boolean.toString(problem3("ppsasvphli")) + "\n");
+        System.out.println("\n\nProblem 3b: " + Boolean.toString(problem3("szzcKcfzrV")) + "\n");
         System.out.println("\n\nProblem 3c: " + Boolean.toString(problem3("dwnzopqzu")) + "\n");
         System.out.println("\n\nProblem 3d: " + Boolean.toString(problem3("ardstudyh")) + "\n");
-        //System.out.println("\n\nProblem 3e: " + Boolean.toString(problem3("rstcxgzqc")) + "\n");
-        //System.out.println("\n\nProblem 3f: " + Boolean.toString(problem3("java")) + "\n");
+        System.out.println("\n\nProblem 3e: " + Boolean.toString(problem3("rstcxgzqc")) + "\n");
+        System.out.println("\n\nProblem 3f: " + Boolean.toString(problem3("java")) + "\n");
      /* password       cipherText   index   shift
      * helloworld     fjgnnqyqtn   2        1
      * helloWORLD     ppsasvphli   4       -2
