@@ -469,32 +469,27 @@ public class Addison_Armstrong_Assign2 {
         // Stores temp into input and sets temp to be empty
         input = temp;
         temp = "";
-        System.out.println(input);
-        if(Math.abs(shiftIndexInt) > input.length() && shiftIndexInt < 0){
-            shiftIndexInt = -(shiftIndexInt % input.length());
-        }else{
-            shiftIndexInt = shiftIndexInt % input.length();
-        System.out.println(shiftIndexInt);
-        }
 
+        // Reduces the shift index to a integer that is between the bounds of [-input.length(), input.length()]
+        shiftIndexInt = shiftIndexInt % input.length();
+
+
+
+        // shifts the input over char by char and adds each char to temp
         for(int index = 0; index < input.length(); index++){
             temp += input.charAt((input.length() + index - shiftIndexInt) % input.length());
         }
 
-//        for(int index = shiftIndexInt+1; index < input.length() + shiftIndexInt+1; index++){
-//            temp += input.charAt((index - shiftIndexInt ) % input.length());
-//        }
+        //TODO: How to figure out to 'console.close();'
+        // How do you want it? Since Scanner will be closed, so will system.in, therefore no new scanners can be created
+        // are you running tests and restarting the program or are you going to test in series?
 
-        System.out.println(temp);
+////        readIn.close();
+//        System.in.close();
 
-        if(encryptedPassword.toLowerCase().equals(temp)){
-            return true;
-        }else{
-            return false;
-        }
+        // Checks if the passed in password, encryptedPassword, and temp are equal. Returns results as a boolean
+        return encryptedPassword.toLowerCase().equals(temp);
     }
-
-
 
     public static void main(String[] args)
     {
@@ -502,35 +497,36 @@ public class Addison_Armstrong_Assign2 {
         int bound2 = 5;
         int bound3 = 10;
         System.out.println("Problem 1: " + Integer.toString(problem1(bound1, bound2, bound3)) + "\n"); //0-1 5-10
-        /*System.out.println("Problem 1a: " + problem1(10, 5, 1) + "\n"); // 0
+        System.out.println("Problem 1a: " + problem1(10, 5, 1) + "\n"); // 0
         System.out.println("Problem 1b: " + problem1(5, 15, 17) + "\n"); // 0-5, 15-17
         System.out.println("Problem 1c: " + problem1(5, 15, 30) + "\n"); // 0-5 15-30
         System.out.println("Problem 1d: " + problem1(5, 5, 10) + "\n"); // 0 -10
         System.out.println("Problem 1e: " + problem1(-5, -5, -10) + "\n"); // 0
-        System.out.println("Problem 1a: " + problem1(10, 10, 10) + "\n"); // 10*/
+        System.out.println("Problem 1f: " + problem1(10, 10, 10) + "\n"); // 10
 
 
         System.out.println("Problem 2: " + Double.toString(problem2(bound1, bound2, bound3)) + "\n\n\n"); //0-1 5-10
-        /*System.out.println("Problem 2a: " + problem2(10, 5, 1) + "\n"); // 0
+        System.out.println("Problem 2a: " + problem2(10, 5, 1) + "\n"); // 0
         System.out.println("Problem 2b: " + problem2(5, 15, 17) + "\n"); // 0-5, 15-17
         System.out.println("Problem 2c: " + problem2(5, 15, 30) + "\n"); // 0-5 15-30
         System.out.println("Problem 2d: " + problem2(5, 5, 10) + "\n"); // 0 -10
         System.out.println("Problem 2e: " + problem2(-5, -5, -10) + "\n"); // 0
-        System.out.println("Problem 2a: " + problem2(10, 10, 10) + "\n"); // 10*/
+        System.out.println("Problem 2f: " + problem2(10, 10, 10) + "\n"); // 10
 
         String encryptedPassword = "fjgnnqyqtn"; // seriously, never store passwords as plaintext, always encrypt it
         System.out.println("\n\nProblem 3: " + Boolean.toString(problem3(encryptedPassword)) + "\n");
         System.out.println("\n\nProblem 3a: " + Boolean.toString(problem3("ppsasvphli")) + "\n");
         System.out.println("\n\nProblem 3b: " + Boolean.toString(problem3("szzcKcfzrV")) + "\n");
-        System.out.println("\n\nProblem 3c: " + Boolean.toString(problem3("dwnzopqzu")) + "\n");
+        System.out.println("\n\nProblem 3c: " + Boolean.toString(problem3("udwnzopqz")) + "\n");
         System.out.println("\n\nProblem 3d: " + Boolean.toString(problem3("ardstudyh")) + "\n");
         System.out.println("\n\nProblem 3e: " + Boolean.toString(problem3("rstcxgzqc")) + "\n");
         System.out.println("\n\nProblem 3f: " + Boolean.toString(problem3("java")) + "\n");
+
      /* password       cipherText   index   shift
      * helloworld     fjgnnqyqtn   2        1
      * helloWORLD     ppsasvphli   4       -2
      * HelloWorld     szzcKcfzrV   14       999
-     * studyhard      dwnzopqzu    22       -67 ----- wrong?
+     * studyhard      udwnzopqz    22       -67 ----- wrong?
      * studyhard      ardstudyh    0        3
      * stuDyharD      rstcxgzqc    25       0
      * JAVA           java         0        0
