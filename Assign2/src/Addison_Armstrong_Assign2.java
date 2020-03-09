@@ -480,13 +480,6 @@ public class Addison_Armstrong_Assign2 {
             temp += input.charAt((input.length() + index - shiftIndexInt) % input.length());
         }
 
-        //TODO: How to figure out to 'console.close();'
-        // How do you want it? Since Scanner will be closed, so will system.in, therefore no new scanners can be created
-        // are you running tests and restarting the program or are you going to test in series?
-
-////        readIn.close();
-//        System.in.close();
-
         // Checks if the passed in password, encryptedPassword, and temp are equal. Returns results as a boolean
         return encryptedPassword.toLowerCase().equals(temp);
     }
