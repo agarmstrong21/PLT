@@ -30,7 +30,7 @@ Name of Project: Assign2
 Name of Class: Addison_Armstrong_Assign2
 Author: Addison Armstrong
 Date Created: 2/29/2020
-Last Update: 3/4/2020
+Last Update: 3/9/2020
 Class Description: This class contains 4 methods, main, problem1, problem2, and problem3. These problems contains
 	unique prompts that students must solve only using things that we have learned in class. All methods are called
 	within the main method.
