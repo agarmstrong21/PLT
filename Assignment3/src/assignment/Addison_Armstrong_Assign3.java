@@ -41,15 +41,15 @@ Class Description: This class contains and implements doublelinkedlists and thei
 package assignment;
 
 
-public class DoubleLinkedList {
-	
+public class Addison_Armstrong_Assign3 {
+
 	// In a double linked list each element in the list
-	// holds a reference to the prev and next elements 
+	// holds a reference to the prev and next elements
 	// in the list.  A few notes:
 	//
 	// 1) if an element is the first in a list, its prev
 	//    element will be null.
-	// 
+	//
 	// 2) if an element is the last in a list, its next
 	//    element will be null.
 	//
@@ -59,7 +59,7 @@ public class DoubleLinkedList {
 	// The headElement is the DoubleLinkedListElement
 	// that contains 1 and the tailElement is the
 	// DoubleLinkedListElement that contains 5.  The
-	// nextElement of the headElement is the 
+	// nextElement of the headElement is the
 	// DoubleLinkedListElement that contains 2 and
 	// the prevElement of the headElement is null.
 	// The prevElement of the tailElement is the
@@ -74,19 +74,19 @@ public class DoubleLinkedList {
 	// it is completely clear, the two lists given above
 	// give the values that are in each element in the
 	// list.  Specifically, each list consists of
-	// DoubleLinkedListElements each of which have int 
+	// DoubleLinkedListElements each of which have int
 	// values (e.g. 1,2,etc).
-	
+
 	// first element in the double linked list
 	public DoubleLinkedListElement headElement;
-	
+
 	// last element in the double linked list
 	public DoubleLinkedListElement tailElement;
-	
+
 	/**
 	 * Constructor for DoubleLinkedList
 	 */
-	public DoubleLinkedList()
+	public Addison_Armstrong_Assign3()
 	{
 		// set the head to be null
 		this.headElement = null;
@@ -350,7 +350,7 @@ public class DoubleLinkedList {
 	public static void main(String[] args) 
 	{
 		// build example list
-		DoubleLinkedList myList = new DoubleLinkedList();
+		Addison_Armstrong_Assign3 myList = new Addison_Armstrong_Assign3();
 		myList.insertTailElement(new DoubleLinkedListElement(3));
 		myList.insertTailElement(new DoubleLinkedListElement(2));
 		myList.insertTailElement(new DoubleLinkedListElement(6));

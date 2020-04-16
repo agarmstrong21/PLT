@@ -12,7 +12,6 @@
 
 
 package assignment;
-import assignment.DoubleLinkedList;
 
 
 public class DoubleLinkedListElement {
