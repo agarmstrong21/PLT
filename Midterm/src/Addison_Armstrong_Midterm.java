@@ -452,11 +452,17 @@ public class Addison_Armstrong_Midterm {
 		System.out.println("Problem 7:");
 		System.out.println(problem7("abcde","cde",2));
 		System.out.println(problem7("QWERTY", "abcde", 3));
+		System.out.println(problem7("Hello", "hello", 0));
 
 		System.out.println("Problem 8:");
-		System.out.println(problem8(9.9));
+		System.out.println(problem8(11));
+		System.out.println(problem8(13));
+		System.out.println(problem8(17));
+		System.out.println(problem8(19));
+		System.out.println(problem8(6.4));
 		System.out.println(problem8(7));
-		System.out.println(problem8(26));
+		System.out.println(problem8(6.9));
+
 
 	}
 }
