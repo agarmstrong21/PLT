@@ -38,42 +38,44 @@
 
 package Final;
 
-import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 
-public class Final {
-	
+public class Addison_Armstrong_Final {
+
 	/**
 	 * Problem 1: 15 points
-	 * 
+	 *
 	 * This method takes as input a positive int
 	 * that is smaller than or and
 	 * prints out a square with length and width
 	 * equal to this input value.  Moreover, this
 	 * method counts up to the square of the input
-	 * For example, suppose the input is 4 then 
+	 * For example, suppose the input is 4 then
 	 * the output should be:
-	 * 
+	 *
 	 * 01 02 03 04
 	 * 05 06 07 08
 	 * 09 10 11 12
 	 * 13 14 15 16
-	 * 
+	 *
 	 * If the input was 2 then the output would be
-	 * 
+	 *
 	 * 01 02
 	 * 03 04
-	 * 
-	 * For this problem you are allowed to use NO 
+	 *
+	 * For this problem you are allowed to use NO
 	 * MORE than one loop of any type.
-	 * 
-	 * Hint: you can create as many variables as 
-	 * would like.  Also, don't worry so much 
+	 *
+	 * Hint: you can create as many variables as
+	 * would like.  Also, don't worry so much
 	 * about spacing besides the spacing BETWEEN
 	 * the numbers (same idea as with the midterm).
-	 * 
+	 *
 	 * @param squareSize
 	 */
 	public static void problem1(int squareSize)
@@ -102,23 +104,23 @@ public class Final {
 			System.out.println("squareSize too large or too small.");
 		}
 	}
-	
-	
+
+
 	/**
 	 * Problem 2: 15 points
-	 * 
+	 *
 	 * This method prints out the first given number of primes
 	 * to a file at the given location.  If the file does not
 	 * exist, you will need to create it.  Otherwise, you should
 	 * overwrite the file.  Num primes will be at least 1.
-	 * 
+	 *
 	 * For example, suppose that numPrimes is 10.  Then the file
 	 * should contain:
-	 * 
+	 *
 	 * 2, 3, 5, 7, 11, 13, 17, 19, 23, 29
-	 * 
+	 *
 	 * You may NOT change the method to throw any exceptions.
-	 * 
+	 *
 	 * @param numPrimes
 	 * @param fileName
 	 */
@@ -174,20 +176,20 @@ public class Final {
 			writeOut.print(primeArray[numPrimes - 1]);
 		}
 	}
-	
+
 	/**
 	 * Problem 3: 10 points
-	 * 
+	 *
 	 * Returns true if firstString is a subString of secondString
-	 * or if secondString is a subString of firstString.  For 
+	 * or if secondString is a subString of firstString.  For
 	 * example, suppose that firstString is "cat" and secondString
 	 * is "at".  In this case secondString would be a substring of
 	 * firstString.
-	 * 
+	 *
 	 * You may use ONLY the length method and subString methods of
 	 * the string class for this problem.  If you use any other
 	 * string methods a zero will be given.
-	 * 
+	 *
 	 * @param firstString
 	 * @param secondString
 	 * @return
@@ -219,24 +221,24 @@ public class Final {
 		// else, return false.
 		return false;
 	}
-	
-	
+
+
 	/**
 	 * Problem 4: 10 points
-	 * 
+	 *
 	 * This method takes as input an HashSet of strings
 	 * that first removes all strings that contain the letter "a"
 	 * (case sensitive!).  Then, for all strings that contain the
-	 * letter b (case sensitive!), a copy of the string is made, an 
-	 * "s" is added to the end of the copy, and the copy is added 
+	 * letter b (case sensitive!), a copy of the string is made, an
+	 * "s" is added to the end of the copy, and the copy is added
 	 * to the HashSet.
-	 * 
-	 * For example, suppose the hashset contains "about", "at", 
+	 *
+	 * For example, suppose the hashset contains "about", "at",
 	 * "cAt", "bob".
-	 * 
-	 * At the end of this method the hashset will contain 
+	 *
+	 * At the end of this method the hashset will contain
 	 * "cAt", "bob", "bobs"
-	 * 
+	 *
 	 * @param myHashSet
 	 */
 	public static void problem4(HashSet<String> myHashSet)
@@ -256,27 +258,27 @@ public class Final {
 			}
 		}
 	}
-	
-	
+
+
 	/**
 	 * Problem 5: 15 points
-	 * 
+	 *
 	 * If the given collection is an ArrayList, this method
-	 * will remove the first num elements or all elements 
-	 * if num is bigger than the size of the ArrayList.  If 
+	 * will remove the first num elements or all elements
+	 * if num is bigger than the size of the ArrayList.  If
 	 * instead the collection is a HashSet, this method will
 	 * add the strings "0", "1", ..., "num" to the HashSet.
-	 * 
-	 * For example, suppose that num is 3 and the collection 
+	 *
+	 * For example, suppose that num is 3 and the collection
 	 * is an ArrayList of size 5.  Then, the elements in the
 	 * arrayList at locations 0, 1, and 2 will be removed.
 	 * If instead the ArrayList is size 2, all elements from
 	 * the ArrayList will be removed.  If the collection is
 	 * a HashSet, the strings "0", "1", and "2" will be added
 	 * to it.
-	 * 
+	 *
 	 * you may assume that num is positive.
-	 * 
+	 *
 	 * @param myCollection
 	 */
 	public static void problem5(Collection<String> myCollection, int num)
@@ -309,28 +311,28 @@ public class Final {
 	}
 
 
-	
-	
+
+
 	/**
 	 * Problem 6: 10 points
-	 * 
-	 * Finish implementing this constructor so that 
+	 *
+	 * Finish implementing this constructor so that
 	 * the passed name and score variables are assigned
 	 * to their corresponding fields of the object
 	 * created by the constructor.  In addition, add
 	 * mutator and accessor methods for both fields
 	 * (i.e. setName, getName etc).  Make sure you name
 	 * these methods correctly!
-	 * 
+	 *
 	 * DO NOT CHANGE THE NAMES OF ANY OF THE VARIABLES!
-	 * 
+	 *
 	 * @param name
 	 * @param score
 	 */
 	private String name;
 	private double score;
 
-	public Final(String name, double score)
+	public Addison_Armstrong_Final(String name, double score)
 	{
 		this.name = name;
 		this.score = score;
@@ -432,16 +434,16 @@ public class Final {
 	 * @param score
 	 * @return
 	 */
-	public static Final problem8(String name, double score)
+	public static Addison_Armstrong_Final problem8(String name, double score)
 	{
 		// return the anonymous class object with the overridden equals method.
-		return new Final(name, score){
+		return new Addison_Armstrong_Final(name, score){
 
 			// overridden equals method.
 			@Override
 			public boolean equals(Object input){
 				// cast the input to final and set it to the new Final inputFinal
-				Final inputFinal = (Final) input;
+				Addison_Armstrong_Final inputFinal = (Addison_Armstrong_Final) input;
 				// if this name and inputFinal's name is the same length, then...
 				if(this.getName().length() == inputFinal.getName().length() ){
 					// for loop to test each char in the both strings to see if they are the same case, if not...
@@ -645,12 +647,12 @@ public class Final {
 
 		//Problem 8:
 		System.out.println("\nProblem 8:");
-		System.out.println(problem8("cat", 4).equals(new Final("cat", 4)));
-		System.out.println(problem8("cAt", 4).equals(new Final("cat", 4)));
-		System.out.println(problem8("dog", 4).equals(new Final("cat", 4)));
-		System.out.println(problem8("5", 4).equals(new Final("cat", 4)));
-		System.out.println(problem8("cat", 4.4).equals(new Final("cat",4.4)));
-		System.out.println(problem8("cat", 4.4).equals(new Final("cat",4.45)));
+		System.out.println(problem8("cat", 4).equals(new Addison_Armstrong_Final("cat", 4)));
+		System.out.println(problem8("cAt", 4).equals(new Addison_Armstrong_Final("cat", 4)));
+		System.out.println(problem8("dog", 4).equals(new Addison_Armstrong_Final("cat", 4)));
+		System.out.println(problem8("5", 4).equals(new Addison_Armstrong_Final("cat", 4)));
+		System.out.println(problem8("cat", 4.4).equals(new Addison_Armstrong_Final("cat",4.4)));
+		System.out.println(problem8("cat", 4.4).equals(new Addison_Armstrong_Final("cat",4.45)));
 
 	}
 
